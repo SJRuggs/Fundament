@@ -13,7 +13,7 @@ const setupTooltip = () =>
                 : tooltip[i].style.top = e.pageY + 'px';
         }
     }
-    console.log("tooltip imported");
+    console.log("imported tooltip module");
 }
 
 export default setupTooltip;
