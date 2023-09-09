@@ -3,18 +3,20 @@
 
     "inventory" : 
     [
-        ["Ring of Shooting Stars", 1],
-        ["2500 gp", 1],
-        ["Lesser Healing Potion", 2]
+        {"name" : "Ring of Shooting Stars", "count" : 1},
+        {"name" : "2500 gp", "count" : 1},
+        {"name" : "Lesser Healing Potion", "count" : 2}
     ],
+
+    "profBonus" : 4,
 
     "race" :
     {
         "name" : "Goblin",
         "asi"  :
         [
-            ["dex", 2],
-            ["cha", 1]
+            {"score" : "dex", "value" : 2},
+            {"score" : "cha", "value" : 1}
         ],
         "features" :
         [
@@ -33,6 +35,46 @@
             }
         ]
     },
+
+    "saves" :
+    [
+        {"name" : "str", "prof" : 1},
+        {"name" : "dex", "prof" : 0},
+        {"name" : "con", "prof" : 0},
+        {"name" : "int", "prof" : 0},
+        {"name" : "wis", "prof" : 0},
+        {"name" : "cha", "prof" : 0}
+    ],
+
+    "skills" : 
+    [
+        {"name" : "acro", "prof" : 0, "score" : "dex"},
+        {"name" : "anim", "prof" : 0, "score" : "wis"},
+        {"name" : "arca", "prof" : 0, "score" : "int"},
+        {"name" : "athl", "prof" : 0, "score" : "str"},
+        {"name" : "dece", "prof" : 0, "score" : "cha"},
+        {"name" : "hist", "prof" : 0, "score" : "int"},
+        {"name" : "insi", "prof" : 0, "score" : "wis"},
+        {"name" : "inti", "prof" : 2, "score" : "cha"},
+        {"name" : "inve", "prof" : 0, "score" : "int"},
+        {"name" : "medi", "prof" : 0, "score" : "wis"},
+        {"name" : "natu", "prof" : 0, "score" : "int"},
+        {"name" : "perc", "prof" : 0, "score" : "wis"},
+        {"name" : "perf", "prof" : 0, "score" : "cha"},
+        {"name" : "pers", "prof" : 1, "score" : "cha"},
+        {"name" : "reli", "prof" : 0, "score" : "int"},
+        {"name" : "slei", "prof" : 0, "score" : "dex"},
+        {"name" : "stea", "prof" : 0, "score" : "dex"},
+        {"name" : "surv", "prof" : 0, "score" : "wis"}
+    ],
     
-    "scores" : [8, 15, 14, 10, 13, 17]
+    "scores" : 
+    [
+        {"name" : "str", "value" : 8},
+        {"name" : "dex", "value" : 15},
+        {"name" : "con", "value" : 14},
+        {"name" : "int", "value" : 10},
+        {"name" : "wis", "value" : 13},
+        {"name" : "cha", "value" : 17}
+    ]
 }

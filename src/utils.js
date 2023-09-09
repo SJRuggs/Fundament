@@ -1,3 +1,5 @@
+const modInt = (score) => Math.floor((score - 10) / 2);
+const modStr = (mod) => mod >= 0 ? `+${mod}` : mod;
 const setupTooltip = () =>
 {
     document.addEventListener('mousemove', fn);
@@ -13,7 +15,6 @@ const setupTooltip = () =>
                 : tooltip[i].style.top = e.pageY + 'px';
         }
     }
-    console.log("imported tooltip module");
 }
 
-export default setupTooltip;
+export default {modInt, modStr, setupTooltip};
