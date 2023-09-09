@@ -1,7 +1,8 @@
-.hover:hover .tooltip {
-    display: block;
-}
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap');
 
+body {
+    font-family: 'Prompt', sans-serif;
+}
 
 .tooltip {
     display: none;
@@ -9,11 +10,36 @@
     margin: 10px;
     padding: 10px;
     position: absolute;
-    z-index: 1000;
     width:200px;
     height:100px;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.hover:hover .tooltip {
+    display: block;
+}
+
+.hover:hover {
+    cursor: cell;
 }
 
 .hover {
     margin:100px;
+}
+
+h1, h2, h3 {
+    margin: 2px;
+    padding: 0;
+}
+
+#scores>* {
+    background-color: #C8C8C8;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin: 10px;
+    text-align: center;
+    width: 120px;
 }
