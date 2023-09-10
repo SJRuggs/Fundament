@@ -16,5 +16,9 @@ const setupTooltip = () =>
         }
     }
 }
+const toggleDarkMode = (darkMode) =>
+{
+    darkMode.checked ? document.querySelector("#main").classList.add("dark-mode") : document.querySelector("#main").classList.remove("dark-mode");
+}
 
-export default {modInt, modStr, setupTooltip};
+export default {modInt, modStr, setupTooltip, toggleDarkMode};

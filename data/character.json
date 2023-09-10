@@ -1,6 +1,16 @@
 {
     "name" : "Pyrrha",
 
+    "acMin" : 10,
+
+    "armor" : 
+    {
+        "name" : "Studded Leather",
+        "armor-type" : 1,
+        "ac"   : 12,
+        "max-dex" : -1
+    },
+
     "inventory" : 
     [
         {"name" : "Ring of Shooting Stars", "count" : 1},

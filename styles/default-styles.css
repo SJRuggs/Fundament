@@ -3,6 +3,68 @@
 body
 {
     font-family: 'Prompt', sans-serif;
+    width   : 100vw;
+    height  : 100vh;
+    margin  : 0;
+    padding : 0;
+    overflow: hidden;
+}
+
+h1, h2
+{
+    margin  : 2px;
+    padding : 0;
+}
+
+h3, h4
+{
+    margin  : 0px;
+    padding : 0;
+}
+
+#main
+{
+    width: 100%;
+    height: calc(110% + 2px);
+    margin-top: -2px;
+}
+
+.dark-mode
+{
+    background-color : #333;
+}
+
+.name
+{
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+
+#title
+{
+    text-align : left;
+    font-size  : 40px;
+    margin-left: 35px;
+}
+
+.dark-mode #title
+{
+    color : #CCC;
+}
+
+#subtitle
+{
+    text-align : right;
+    color      :#555;
+    padding    : 0;
+    margin-left: 15px;
+    margin-bottom: 12px;
+}
+
+.dark-mode #subtitle
+{
+    color : #a0a0a0;
 }
 
 .hover:hover .tooltip
@@ -24,20 +86,55 @@ body
 
 .tooltip
 {
-    display      : none;
-    background   : white;
-    margin       : 10px;
-    padding      : 10px;
-    position     : absolute;
-    border       : solid;
-    border-width : 5px;
-    border-color : #C8C8C8;
-    border-radius: 25px;
-    text-align   : left;
-    max-width    : 50vw;
+    display          : none;
+    background-color : white;
+    margin           : 10px;
+    padding          : 10px;
+    position         : absolute;
+    border           : solid;
+    border-width     : 5px;
+    border-color     : #CCC;
+    border-radius    : 25px;
+    text-align       : left;
+    max-width        : 50vw;
 }
 
-.grid-description
+.dark-mode .tooltip
+{
+    background-color : #CCC;
+    border-color     : #555;
+}
+
+.common
+{
+    background-color : #CCC;
+    border-radius    : 15px;
+    padding          : 10px;
+    margin: 15px;
+    margin-top: 0;
+    display: flex;
+}
+
+.dark-mode .common
+{
+    background-color : #555;
+}
+
+#meta>*
+{
+    background-color : white;
+    border-radius    : 10px;
+    margin           : 10px;
+    text-align       : center;
+    width            : 80px;
+}
+
+.dark-mode #meta>*
+{
+    background-color : #CCC;
+}
+
+.grid-score-description
 { 
     grid-area             : 2 / 2 / 3 / 3;
     display               : grid;
@@ -78,31 +175,9 @@ body
     margin : 100px;
 }
 
-h1, h2
+.grid-score-modifier
 {
-    margin  : 2px;
-    padding : 0;
-}
-
-h3, h4
-{
-    margin  : 0px;
-    padding : 0;
-}
-
-
-#scores>*
-{
-    background-color : white;
-    border-radius    : 10px;
-    margin           : 10px;
-    text-align       : center;
-    width            : 80px;
-}
-
-.grid-modifier
-{
-    background-color : #C8C8C8;
+    background-color : #CCC;
     text-align       : center;
     border-radius    : 15px;
     width            : 85px;
@@ -114,57 +189,146 @@ h3, h4
     font-size        : 25px;
 }
 
+.dark-mode .grid-score-modifier
+{
+    background-color : #555;
+    color: #CCC;
+}
+
 .modifier
 {
     padding-right : 10px;
 }
 
-#title
-{
-    text-align : center;
-    font-size  : 40px;
-}
-
-#subtitle
-{
-    text-align : center;
-    color      :#555;
-    padding    : 0;
-}
-
-.common
-{
-    background-color : #C8C8C8;
-    border-radius    : 15px;
-    padding          : 10px;
-}
-
-p
-{
-    margin  : 2px;
-    padding : 0;
-}
-
-#optionsButton:hover
-{
-    cursor : pointer;
-    transform: rotate(90deg);
-}
-
-#optionsButton
+#settings-box
 {
     position         : absolute;
-    top              : 5px;
-    right            : 5px;
+    margin           : 0;
+    top              : 8px;
+    right            : 8px;
     height           : 40px;
     width            : 40px;
-    display          : flex;
-    flex-direction   : column;
-    justify-content  : center;
-    align-items      : center;
-    background-color : #C8C8C8;
-    border           : 0px;
+    background-color : white;
+    border           : solid 5px #CCC;
     border-radius    : 25px;
     transition       : 
-        transform     1s;
+        width 0.2s,
+        height 0.2s;
+}
+
+.dark-mode #settings-box
+{
+    background-color : #CCC;
+    border-color     : #555;
+}
+
+#settings-box:hover
+{
+    cursor           : pointer;
+    width            : 200px;
+    height           : 80px;
+}
+
+#settings-box>img
+{
+    position   : absolute;
+    top        : 5px;
+    right      : 5px;
+    width      : 30px;
+    height     : 30px;
+    transition : transform 0.5s;
+}
+
+#settings-box:hover img
+{
+    transform : rotate(90deg);
+}
+
+#settings
+{
+    opacity             : 0;
+    transition-property : opacity;
+    transition-delay    : 0;
+    padding-left        : 10px;
+}
+
+#settings-box:hover #settings
+{
+    opacity             : 1;
+    transition-property : opacity;
+    transition-delay    : 0.1s;
+    transition-duration : 0.3s;
+}
+
+.switch
+{
+  position : relative;
+  display  : inline-block;
+  width    : 60px;
+  height   : 34px;
+}
+
+.switch input
+{
+    opacity : 0;
+    width   : 0;
+    height  : 0;
+}
+
+.slider
+{
+    position         : absolute;
+    cursor           : pointer;
+    top              : 0;
+    left             : 0;
+    right            : 0;
+    bottom           : 0;
+    background-color : #ccc;
+    transition       : 0.2s;
+}
+
+.slider:before
+{
+    position         : absolute;
+    content          : "";
+    height           : 26px;
+    width            : 26px;
+    left             : 4px;
+    bottom           : 4px;
+    background-color : white;
+    transition       : 0.2s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.option
+{
+    display        : flex;
+    flex-direction : row;
+    align-items    : center;
+}
+
+.option>h3
+{
+    margin-left : 10px;
+    white-space: nowrap;
 }

@@ -11,159 +11,182 @@
 </head>
 
 <body>
-    <h1 id="title">Loading...</h1>
-    <h3 id="subtitle"><i>Subtitle</i></h3>
-    <div class="common">
-        <div id="scores">
-            <div id="str" class="hover">
-                <div id="str-tooltip" class="tooltip ability-tooltip">
-                    <h3 class="grid-label">STRENGTH</h3>
-                    <div class="grid-modifier">
-                        <h1 id="str-mod" class="modifier">+0</h1>
-                    </div>
-                    <div class="grid-description">
-                        <div class="grid-left">
-                            Saving Throws <br>
-                            Athletics
+    <div id="main">
+        <div class="name">
+            <h1 id="title">Name</h1>
+            <h3 id="subtitle"><i>Subtitle</i></h3>
+        </div>
+        <div class="common">
+            <div id="meta">
+                <div id="str" class="hover">
+                    <div id="str-tooltip" class="tooltip ability-tooltip">
+                        <h3 class="grid-label">STRENGTH</h3>
+                        <div class="grid-score-modifier">
+                            <h1 id="str-mod" class="modifier">+0</h1>
                         </div>
-                        <div class="grid-right">
-                            <div id="str-saves">+0</div>
-                            <div id="athl">+0</div>
+                        <div class="grid-score-description">
+                            <div class="grid-left">
+                                Saving Throws <br>
+                                Athletics
+                            </div>
+                            <div class="grid-right">
+                                <div id="str-saves">+0</div>
+                                <div id="athl">+0</div>
+                            </div>
                         </div>
                     </div>
+                    <h2>STR</h2>
+                    <h1 id="str-score">10</h1>
                 </div>
-                <h2>STR</h2>
-                <h1 id="str-score">10</h1>
+                <div id="dex" class="hover">
+                    <div id="dex-tooltip" class="tooltip ability-tooltip">
+                        <h3 class="grid-label">DEXTERITY</h3>
+                        <div class="grid-score-modifier">
+                            <h1 id="dex-mod" class="modifier">+0</h1>
+                        </div>
+                        <div class="grid-score-description">
+                            <div class="grid-left">
+                                Saving Throws <br>
+                                Acrobatics <br>
+                                Sleight of Hand <br>
+                                Stealth
+                            </div>
+                            <div class="grid-right">
+                                <div id="dex-saves">+0</div>
+                                <div id="acro">+0</div>
+                                <div id="slei">+0</div>
+                                <div id="stea">+0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>DEX</h2>
+                    <h1 id="dex-score">10</h1>
+                </div>
+                <div id="con" class="hover">
+                    <div id="con-tooltip" class="tooltip ability-tooltip">
+                        <h3 class="grid-label">CONSTITUTION</h3>
+                        <div class="grid-score-modifier">
+                            <h1 id="con-mod" class="modifier">+0</h1>
+                        </div>
+                        <div class="grid-score-description">
+                            <div class="grid-left">
+                                Saving Throws <br>
+                            </div>
+                            <div class="grid-right">
+                                <div id="con-saves">+0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>CON</h2>
+                    <h1 id="con-score">10</h1>
+                </div>
+                <div id="int" class="hover">
+                    <div id="int-tooltip" class="tooltip ability-tooltip">
+                        <h3 class="grid-label">INTELLIGENCE</h3>
+                        <div class="grid-score-modifier">
+                            <h1 id="int-mod" class="modifier">+0</h1>
+                        </div>
+                        <div class="grid-score-description">
+                            <div class="grid-left">
+                                Saving Throws <br>
+                                Arcana <br>
+                                History <br>
+                                Investigation<br>
+                                Nature <br>
+                                Religion
+                            </div>
+                            <div class="grid-right">
+                                <div id="int-saves">+0</div>
+                                <div id="arca">+0</div>
+                                <div id="hist">+0</div>
+                                <div id="inve">+0</div>
+                                <div id="natu">+0</div>
+                                <div id="reli">+0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>INT</h2>
+                    <h1 id="int-score">10</h1>
+                </div>
+                <div id="wis" class="hover">
+                    <div id="wis-tooltip" class="tooltip ability-tooltip">
+                        <h3 class="grid-label">WISDOM</h3>
+                        <div class="grid-score-modifier">
+                            <h1 id="wis-mod" class="modifier">+0</h1>
+                        </div>
+                        <div class="grid-score-description">
+                            <div class="grid-left">
+                                Saving Throws <br>
+                                Animal Handling <br>
+                                Insight <br>
+                                Medicine <br>
+                                Perception <br>
+                                Survival
+                            </div>
+                            <div class="grid-right">
+                                <div id="wis-saves">+0</div>
+                                <div id="anim">+0</div>
+                                <div id="insi">+0</div>
+                                <div id="medi">+0</div>
+                                <div id="perc">+0</div>
+                                <div id="surv">+0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>WIS</h2>
+                    <h1 id="wis-score">10</h1>
+                </div>
+                <div id="cha" class="hover">
+                    <div id="cha-tooltip" class="tooltip ability-tooltip">
+                        <h3 class="grid-label">CHARISMA</h3>
+                        <div class="grid-score-modifier">
+                            <h1 id="cha-mod" class="modifier">+0</h1>
+                        </div>
+                        <div class="grid-score-description">
+                            <div class="grid-left">
+                                Saving Throws <br>
+                                Deception <br>
+                                Intimidation <br>
+                                Performance <br>
+                                Persuasion
+                            </div>
+                            <div class="grid-right">
+                                <div id="cha-saves">+0</div>
+                                <div id="dece">+0</div>
+                                <div id="inti">+0</div>
+                                <div id="perf">+0</div>
+                                <div id="pers">+0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>CHA</h2>
+                    <h1 id="cha-score">10</h1>
+                </div>
             </div>
-            <div id="dex" class="hover">
-                <div id="dex-tooltip" class="tooltip ability-tooltip">
-                    <h3 class="grid-label">DEXTERITY</h3>
-                    <div class="grid-modifier">
-                        <h1 id="dex-mod" class="modifier">+0</h1>
+            <div id="meta">
+                <div id="ac" class="hover">
+                    <div id="str-tooltip" class="tooltip ability-tooltip">
+                        <h3 class="grid-label">ARMOR CLASS</h3>
                     </div>
-                    <div class="grid-description">
-                        <div class="grid-left">
-                            Saving Throws <br>
-                            Acrobatics <br>
-                            Sleight of Hand <br>
-                            Stealth
-                        </div>
-                        <div class="grid-right">
-                            <div id="dex-saves">+0</div>
-                            <div id="acro">+0</div>
-                            <div id="slei">+0</div>
-                            <div id="stea">+0</div>
-                        </div>
-                    </div>
+                    <h2>AC</h2>
+                    <h1 id="ac-score"></h1>
                 </div>
-                <h2>DEX</h2>
-                <h1 id="dex-score">10</h1>
             </div>
-            <div id="con" class="hover">
-                <div id="con-tooltip" class="tooltip ability-tooltip">
-                    <h3 class="grid-label">CONSTITUTION</h3>
-                    <div class="grid-modifier">
-                        <h1 id="con-mod" class="modifier">+0</h1>
-                    </div>
-                    <div class="grid-description">
-                        <div class="grid-left">
-                            Saving Throws <br>
-                        </div>
-                        <div class="grid-right">
-                            <div id="con-saves">+0</div>
-                        </div>
-                    </div>
+        </div>
+        <div id="settings-box">
+            <img src="./images/gear.svg" alt="Settings">
+            <div id="settings">
+                <h2>Settings</h2>
+                <div class="option">
+                    <label class="switch">
+                        <input type="checkbox" id="dark-mode-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <h3>Dark Mode</h3>
                 </div>
-                <h2>CON</h2>
-                <h1 id="con-score">10</h1>
-            </div>
-            <div id="int" class="hover">
-                <div id="int-tooltip" class="tooltip ability-tooltip">
-                    <h3 class="grid-label">INTELLIGENCE</h3>
-                    <div class="grid-modifier">
-                        <h1 id="int-mod" class="modifier">+0</h1>
-                    </div>
-                    <div class="grid-description">
-                        <div class="grid-left">
-                            Saving Throws <br>
-                            Arcana <br>
-                            History <br>
-                            Investigation<br>
-                            Nature <br>
-                            Religion
-                        </div>
-                        <div class="grid-right">
-                            <div id="int-saves">+0</div>
-                            <div id="arca">+0</div>
-                            <div id="hist">+0</div>
-                            <div id="inve">+0</div>
-                            <div id="natu">+0</div>
-                            <div id="reli">+0</div>
-                        </div>
-                    </div>
-                </div>
-                <h2>INT</h2>
-                <h1 id="int-score">10</h1>
-            </div>
-            <div id="wis" class="hover">
-                <div id="wis-tooltip" class="tooltip ability-tooltip">
-                    <h3 class="grid-label">WISDOM</h3>
-                    <div class="grid-modifier">
-                        <h1 id="wis-mod" class="modifier">+0</h1>
-                    </div>
-                    <div class="grid-description">
-                        <div class="grid-left">
-                            Saving Throws <br>
-                            Animal Handling <br>
-                            Insight <br>
-                            Medicine <br>
-                            Perception <br>
-                            Survival
-                        </div>
-                        <div class="grid-right">
-                            <div id="wis-saves">+0</div>
-                            <div id="anim">+0</div>
-                            <div id="insi">+0</div>
-                            <div id="medi">+0</div>
-                            <div id="perc">+0</div>
-                            <div id="surv">+0</div>
-                        </div>
-                    </div>
-                </div>
-                <h2>WIS</h2>
-                <h1 id="wis-score">10</h1>
-            </div>
-            <div id="cha" class="hover">
-                <div id="cha-tooltip" class="tooltip ability-tooltip">
-                    <h3 class="grid-label">CHARISMA</h3>
-                    <div class="grid-modifier">
-                        <h1 id="cha-mod" class="modifier">+0</h1>
-                    </div>
-                    <div class="grid-description">
-                        <div class="grid-left">
-                            Saving Throws <br>
-                            Deception <br>
-                            Intimidation <br>
-                            Performance <br>
-                            Persuasion
-                        </div>
-                        <div class="grid-right">
-                            <div id="cha-saves">+0</div>
-                            <div id="dece">+0</div>
-                            <div id="inti">+0</div>
-                            <div id="perf">+0</div>
-                            <div id="pers">+0</div>
-                        </div>
-                    </div>
-                </div>
-                <h2>CHA</h2>
-                <h1 id="cha-score">10</h1>
             </div>
         </div>
     </div>
-    <button id="optionsButton">
-        <img src="./images/gear.svg" alt="Options" style="width:20px;height:20px">
-    </button>
 
 </body>
 

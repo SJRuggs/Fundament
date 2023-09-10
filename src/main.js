@@ -1,18 +1,21 @@
 import util from "./utils.js";
 
-const init = (data) => 
+let defaultUpdate = [];
+let update = [];
+let data;
+let records = {};
+
+const init = (json) => 
 {
+    data = json;
+
     util.setupTooltip();
+    setupSettings();
+
+    // setup default update
+    defaultUpdate = [updateTitle, updateScores, updateAC];
+
     updateSheet(data);
-
-
-
-
-    
-
-
-
-
 
 }
 
@@ -21,22 +24,37 @@ fetch("./data/character.json")
     .then((response) => response.json())
     .then((json) => init(json));
 
-const updateSheet = (data) =>
+const setupSettings = () =>
 {
-    console.log(`imported ${data.name} character`);
-    document.querySelector("#title").innerHTML = data.name;
-    updateScores(data);
-
-
-
-
-
-
-
-
+    // setup dark mode toggle
+    let darkMode = document.querySelector("#dark-mode-toggle");
+    darkMode.onclick = () => util.toggleDarkMode(darkMode);
 }
 
-const updateScores = (data) =>
+const restart = () =>
+{
+    // reset records
+    records = {};
+
+    records.ac = [];
+}
+
+const updateAC = () =>
+{
+    // armor
+    if (data.armor)
+
+    // unarmored
+    records.ac.push(`${data.acMin} (unarmored)`);
+    let ac = data.acMin + util.modInt(data.scores.find((score) => score.name == "dex").value);
+
+
+    // apply ac
+    document.querySelector("#ac-score").innerHTML = ac;
+    console.log(records.ac);
+}
+
+const updateScores = () =>
 {
     // scores
     data.scores.forEach((score) =>
@@ -76,5 +94,16 @@ const updateScores = (data) =>
         // apply to sheet
         document.querySelector(`#${skill.name}`).innerHTML = bonus;
     });
-    
+}
+
+const updateSheet = () =>
+{
+    restart();
+    update.forEach((fn) => fn());
+    defaultUpdate.forEach((fn) => fn());
+}
+
+const updateTitle = () =>
+{
+    document.querySelector("#title").innerHTML = data.name;
 }
