@@ -2,18 +2,29 @@
 
 body
 {
-    font-family: 'Prompt', sans-serif;
-    width   : 100vw;
-    height  : 100vh;
-    margin  : 0;
-    padding : 0;
-    overflow: hidden;
+    font-family : 'Prompt', sans-serif;
+    width       : 100vw;
+    height      : 100vh;
+    margin      : 0;
+    padding     : 0;
+    overflow    : hidden;
+    user-select : none;
 }
 
 h1, h2
 {
     margin  : 2px;
     padding : 0;
+}
+
+.header
+{
+    text-align: center;
+}
+
+.dark-mode .header
+{
+    color : #CCC;
 }
 
 h3, h4
@@ -55,11 +66,11 @@ h3, h4
 
 #subtitle
 {
-    text-align : right;
-    color      :#555;
-    padding    : 0;
-    margin-left: 15px;
-    margin-bottom: 12px;
+    text-align    : right;
+    color         :#555;
+    padding       : 0;
+    margin-left   : 15px;
+    margin-bottom : 12px;
 }
 
 .dark-mode #subtitle
@@ -72,31 +83,29 @@ h3, h4
     display : block;
 }
 
-.grid-label
+.hover
 {
-    grid-area     : 1 / 1 / 2 / 3;
-    text-align: center;
-}
-
-.grid-modifier
-{
-    grid-area : 2 / 1 / 3 / 2;
-    margin    : 0;
-}
-
-.tooltip
-{
-    display          : none;
     background-color : white;
+    border-radius    : 10px;
     margin           : 10px;
-    padding          : 10px;
-    position         : absolute;
-    border           : solid;
-    border-width     : 5px;
-    border-color     : #CCC;
-    border-radius    : 25px;
-    text-align       : left;
-    max-width        : 50vw;
+    text-align       : center;
+    width            : 80px;
+    transition       : 
+        background-color 0.2s,
+        color            0.2s;
+}
+
+.hover:hover
+{
+    cursor : cell;
+    background-color: #555;
+    color: #CCC;
+}
+
+.dark-mode .hover:hover
+{
+    background-color: white;
+    color: black;
 }
 
 .dark-mode .tooltip
@@ -110,9 +119,9 @@ h3, h4
     background-color : #CCC;
     border-radius    : 15px;
     padding          : 10px;
-    margin: 15px;
-    margin-top: 0;
-    display: flex;
+    margin           : 15px;
+    margin-top       : 0;
+    display          : flex;
 }
 
 .dark-mode .common
@@ -120,63 +129,62 @@ h3, h4
     background-color : #555;
 }
 
-#meta>*
-{
-    background-color : white;
-    border-radius    : 10px;
-    margin           : 10px;
-    text-align       : center;
-    width            : 80px;
-}
-
-.dark-mode #meta>*
+.dark-mode .bio>*, .dark-mode .scrollable
 {
     background-color : #CCC;
 }
 
-.grid-score-description
+.right
+{
+    justify-content : right;
+}
+
+.left
+{
+    justify-content : left;
+}
+
+.middle
+{
+    text-align      : center;
+    justify-content : center;
+}
+
+.pairs
 { 
-    grid-area             : 2 / 2 / 3 / 3;
-    display               : grid;
-    grid-template-columns : repeat(2);
-    column-gap            : 10px;
-    padding-left          : 5px;
-    padding-top           : 2px;
-    justify-content       : right;
-    line-height           : 20px;
-    width                 : 180px;
+    display : flex;
+    gap     :10px;
+}
+
+.pairs:first-child
+{
+    text-align : right;
+}
+
+.pairs:nth-child(1)
+{
+    text-align : left;
 }
 
 .hover:hover .ability-tooltip
 {
-    display               : grid;
-    grid-template-columns : repeat(2);
-    grid-template-rows    : repeat(2);
+    display : flex;
 }
 
-.grid-left 
-{
-    grid-area  : 1 / 1 / 2 / 2;
-    text-align : right;
-}
+ .tooltip-segment
+ {
+    display: flex;
+ }
 
-.grid-right 
-{
-    grid-area  : 1 / 2 / 2 / 3;
-}
+ .tooltip-segment>*
+ {
+    display: flex;
+    flex-direction: column;
+ }
 
-.hover:hover
+.inner
 {
-    cursor : cell;
-}
-
-.hover
-{
-    margin : 100px;
-}
-
-.grid-score-modifier
-{
+    font-size        : 50px;
     background-color : #CCC;
     text-align       : center;
     border-radius    : 15px;
@@ -186,13 +194,12 @@ h3, h4
     flex-direction   : column;
     justify-content  : center;
     align-items      : center;
-    font-size        : 25px;
 }
 
-.dark-mode .grid-score-modifier
+.dark-mode .inner
 {
     background-color : #555;
-    color: #CCC;
+    color            : #CCC;
 }
 
 .modifier
@@ -262,10 +269,10 @@ h3, h4
 
 .switch
 {
-  position : relative;
-  display  : inline-block;
-  width    : 60px;
-  height   : 34px;
+    position : relative;
+    display  : inline-block;
+    width    : 60px;
+    height   : 34px;
 }
 
 .switch input
@@ -300,35 +307,108 @@ h3, h4
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color : #2196F3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow : 0 0 1px #2196F3;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform : translateX(26px);
+  -ms-transform     : translateX(26px);
+  transform         : translateX(26px);
 }
 .slider.round {
-  border-radius: 34px;
+  border-radius : 34px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+  border-radius : 50%;
 }
 
 .option
 {
-    display        : flex;
-    flex-direction : row;
-    align-items    : center;
+    display         : flex;
+    flex-direction  : row;
+    align-items     : center;
+    justify-content : start;
+    cursor          : pointer;
 }
 
 .option>h3
 {
-    margin-left : 10px;
-    white-space: nowrap;
+    margin-left : 60px;
+    white-space : nowrap;
+}
+
+.tooltip
+{
+    display          : none;
+    background-color : white;
+    margin           : 10px;
+    padding          : 10px;
+    position         : absolute;
+    border           : solid;
+    border-width     : 5px;
+    border-color     : #CCC;
+    border-radius    : 25px;
+    text-align       : left;
+    max-width        : 50vw;
+    color            : black;
+}
+
+.scrollable
+{
+    background-color : white;
+    border-radius    : 10px;
+    margin           : 10px;
+    padding          : 10px;
+    display          : flex;
+    flex-direction   : column;
+    align-items      : start;
+    gap              : 5px;
+    height           : 82vh;
+    width            : 25vw;
+    align-items      : stretch;
+    overflow-y       : scroll;
+}
+
+.scrollable>*
+{
+    background-color : #CCC;
+    border-radius    : 10px;
+    text-align       : center;
+    width            : calc(100% - 20px);
+    margin           : 0px;
+    padding          : 10px;
+}
+
+.bio
+{
+    margin                : 10px;
+    display               : grid;
+    grid-template-columns : repeat(3, 1fr);
+    grid-template-rows    : repeat(2);
+    grid-column-gap       : 0px;
+    grid-row-gap          : 0px;
+    gap                   : 10px;
+}
+
+.bio>*
+{
+    margin :0px;
+}
+
+::-webkit-scrollbar
+{
+    width : 0px;
+}
+
+.draggable {
+  cursor: move;
+}
+
+.draggable.dragging {
+  opacity: 0.5;
 }

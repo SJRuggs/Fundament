@@ -8,7 +8,7 @@
         "name" : "Studded Leather",
         "armor-type" : 1,
         "ac"   : 12,
-        "max-dex" : -1
+        "max" : -1
     },
 
     "inventory" : 
@@ -31,17 +31,90 @@
         "features" :
         [
             {
-                "name" : "Fury of the Small",
-                "desc" :
+                "name"  : "Creature Type",
+                "desc"  : 
+                {
+                    "short" : "You are Humanoid and Goblinoid.",
+                    "long"  : "You are a Humanoid. You are also considered a goblinoid for any prerequisite or effect that requires you to be a goblinoid."
+                },
+                "grant" : [],
+                "req"   : 1,
+                "src"   : "Goblin"
+            },
+            {
+                "name"  : "Size",
+                "desc"  : 
+                {
+                    "short" : "You are Small."
+                },
+                "grant" : [],
+                "req"   : 1,
+                "src"   : "Goblin"
+            },
+            {
+                "name"  : "Darkvision",
+                "desc"  : 
+                {
+                    "short" : "You have 60 feet of Darkvision.",
+                    "long"  : "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray."
+                },
+                "grant" : [],
+                "req"   : 1,
+                "src"   : "Goblin"
+            },
+            {
+                "name"  : "Natural Resilience",
+                "desc"  : 
+                {
+                    "short" : "You have resistance to poison damage and have advantage on saving throws against being poisoned."
+                },
+                "grant" : [],
+                "req"   : 1,
+                "src"   : "Goblin"
+            },
+            {
+                "name"  : "Fury of the Small",
+                "desc"  :
+                {
+                    "short"    : "Increase attack damage against a creature larger than you.",
+                    "long"     : "When you damage a creature with an attack or a spell and the creature’s size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your proficiency bonus.<ul><li>You can use this trait a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest, and you can use it no more than once per turn.</li></ul>",
+                    "recharge" : "Proficiency bonus times per long rest"
+                },
+                "grant" : [],
+                "req"   : 1,
+                "src"   : "Goblin"
+            },
+            {
+                "name"  : "Nimble Escape",
+                "desc"  : 
+                {
+                    "short" : "You can take the Disengage or Hide action as a bonus action on each of your turns."
+                },
+                "grant" : [],
+                "req"   : 1,
+                "src"   : "Goblin"
+            },
+            {
+                "name"  : "Languages",
+                "desc"  : 
+                {
+                    "short" : "You can speak, read, and write Common and one language of your choice.",
+                    "long"  : "Your character can speak, read, and write Common and one other language that you and your DM agree is appropriate for the character. The <i>Player’s Handbook<i> offers a list of languages to choose from. The DM is free to modify that list for a campaign."
+                },
+                "grant" : 
                 [
                     {
-                        "short"    : "Increase attack damage against a creature larger than you. Once per short rest.",
-                        "long"     : "When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest.",
-                        "recharge" : "Once per short or long rest",
-                        "action"   : 1
+                        "type" : "lang",
+                        "name" : "Common"
+                    },
+                    {
+                        "type" : "lang",
+                        "name" : "Goblin"
                     }
                 ],
-                "src" : "Goblin"
+                "req"   : 1,
+                "src"   : "Goblin"
+
             }
         ]
     },
@@ -55,6 +128,12 @@
         {"name" : "wis", "prof" : 0},
         {"name" : "cha", "prof" : 0}
     ],
+
+    "shield" :
+    {
+        "name" : "Shield",
+        "ac"   : 2
+    },
 
     "skills" : 
     [

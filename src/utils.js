@@ -4,7 +4,8 @@ const setupTooltip = () =>
 {
     document.addEventListener('mousemove', fn);
     let tooltip = document.querySelectorAll('.tooltip');
-    function fn(e) {
+    function fn(e)
+    {
         for (let i = tooltip.length; i--;)
         {
             e.pageX > window.innerWidth / 2
@@ -20,5 +21,6 @@ const toggleDarkMode = (darkMode) =>
 {
     darkMode.checked ? document.querySelector("#main").classList.add("dark-mode") : document.querySelector("#main").classList.remove("dark-mode");
 }
+const toKebabCase = (string) => string.replace(/\s+/g, '-').toLowerCase();
 
-export default {modInt, modStr, setupTooltip, toggleDarkMode};
+export default {modInt, modStr, setupTooltip, toggleDarkMode, toKebabCase};
