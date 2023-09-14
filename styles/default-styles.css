@@ -379,9 +379,9 @@ input:checked + .slider:before {
     background-color : #CCC;
     border-radius    : 10px;
     text-align       : center;
-    width            : calc(100% - 20px);
+    width            : calc(100% - 10px);
     margin           : 0px;
-    padding          : 10px;
+    padding          : 5px;
 }
 
 .bio
@@ -411,4 +411,19 @@ input:checked + .slider:before {
 
 .draggable.dragging {
   opacity: 0.5;
+}
+
+.action, .passive
+{
+    font-size: 12px;
+}
+
+h4
+{
+    font-size: 12px;
+}
+
+.section-header
+{
+    background-color: white;
 }

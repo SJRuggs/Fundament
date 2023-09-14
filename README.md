@@ -4,6 +4,7 @@ Json character files must include the following. Any item that does not include 
 - "acMin"     : integer      --> unarmored armor class
 - "armor"     : object
 - "inventory" : 2D array
+- "levels"    : object array
 - "profBonus" : int          --> proficiency bonus
 - "race"      : object
 - "shield"    : object
@@ -52,6 +53,10 @@ Json character files must include the following. Any item that does not include 
 "inventory" objects include:
 - "name"  : string  --> item name
 - "count" : integer --> item count
+
+"levels" objects include:
+- "features" : object array
+- "class"    : string       --> class name
 
 "race" includes:
 - "asi"      : object array

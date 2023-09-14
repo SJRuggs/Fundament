@@ -1,26 +1,52 @@
 {
-    "name" : "Pyrrha",
+    "name"      : "Pyrrha",
 
-    "acMin" : 10,
+    "acMin"     : 10,
 
-    "armor" : 
+    "armor"     : 
     {
-        "name" : "Studded Leather",
+        "name"       : "Studded Leather",
         "armor-type" : 1,
-        "ac"   : 12,
-        "max" : -1
+        "ac"         : 12,
+        "max"        : -1
     },
 
     "inventory" : 
     [
         {"name" : "Ring of Shooting Stars", "count" : 1},
-        {"name" : "2500 gp", "count" : 1},
-        {"name" : "Lesser Healing Potion", "count" : 2}
+        {"name" : "2500 gp",                "count" : 1},
+        {"name" : "Lesser Healing Potion",  "count" : 2}
+    ],
+
+    "levels"    : 
+    [
+        {
+            "name"  : "Unarmored Defense",
+            "desc"  : 
+            {
+                "short" : "Your unarmored armor class increases.",
+                "long" : "While you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Charisma modifier."
+            },
+            "grant" : [],
+            "req"   : 1,
+            "src"   : "Monk"
+        },
+        {
+            "name"  : "Martial Arts",
+            "desc"  : 
+            {
+                "short" : "You gain benefits while unarmored and unarmed or wielding only monk weapons.",
+                "long"  : "Your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two-handed or heavy property.<br>You gain the following benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:<ul><li>You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes and monk weapons.</li><li>You can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.</li><li>When you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action. For example, if you take the Attack action and attack with a quarterstaff, you can also make an unarmed strike as a bonus action, assuming you haven't already taken a bonus action this turn.</li></ul>"
+            },
+            "grant" : [],
+            "req"   : 1,
+            "src"   : "Monk"
+        }
     ],
 
     "profBonus" : 4,
 
-    "race" :
+    "race"      :
     {
         "name" : "Goblin",
         "asi"  :
@@ -119,7 +145,7 @@
         ]
     },
 
-    "saves" :
+    "saves"    :
     [
         {"name" : "str", "prof" : 1},
         {"name" : "dex", "prof" : 0},
@@ -129,13 +155,13 @@
         {"name" : "cha", "prof" : 0}
     ],
 
-    "shield" :
+    "shield"   :
     {
         "name" : "Shield",
         "ac"   : 2
     },
 
-    "skills" : 
+    "skills"   : 
     [
         {"name" : "acro", "prof" : 0, "score" : "dex"},
         {"name" : "anim", "prof" : 0, "score" : "wis"},
@@ -157,7 +183,7 @@
         {"name" : "surv", "prof" : 0, "score" : "wis"}
     ],
     
-    "scores" : 
+    "scores"   : 
     [
         {"name" : "str", "value" : 8},
         {"name" : "dex", "value" : 15},

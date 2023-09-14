@@ -5,7 +5,7 @@ let data;
 const init = (json) => 
 {
     data = json;
-    data.defaultUpdate = [implementRace, calcAC, uploadScores, uploadTitle, compileFeatures, util.setupTooltip];
+    data.defaultUpdate = [implementRace, implementLevels, calcAC, uploadScores, uploadTitle, compileFeatures, util.setupTooltip];
     data.update = [];
     
     setupSettings();
@@ -14,6 +14,7 @@ const init = (json) =>
 }
 
 // fetch character information then start program
+
 fetch("./data/character.json")
     .then((response) => response.json())
     .then((json) => init(json));
@@ -79,6 +80,14 @@ const compileFeatures = () =>
     Object.keys(sources).forEach((source) =>
     {
 
+        // scrollable
+        let allActions = document.createElement("div");
+        let allPassives = document.createElement("div");
+        allActions.classList.add("scrollable");
+        allPassives.classList.add("scrollable");
+        allActions.id = "all-actions";
+        allPassives.id = "all-passives";
+
         sources[source].forEach((feature) =>
         {
             // construct div
@@ -95,7 +104,7 @@ const compileFeatures = () =>
             // recharge
             if (feature.desc.recharge)
             {
-                // TODO: implement action
+                // TODO: implement recharge
             }
 
             // tooltip
@@ -112,26 +121,38 @@ const compileFeatures = () =>
 
             // push
             feature.desc.action ? actions.push(div) : passives.push(div);
-            feature.desc.action ? document.querySelector("#actions").appendChild(div) : document.querySelector("#passives").appendChild(div);
         });
 
-        // upload divs
+        console.log(allPassives);
+
+        // section title
         document.querySelector("#actions").innerHTML = "<h2 class='header'>Actions</h2>";
         document.querySelector("#passives").innerHTML = "<h2 class='header'>Passives</h2>";
-
-        let allActions = document.createElement("div");
-        let allPassives = document.createElement("div");
-        allActions.classList.add("scrollable");
-        allPassives.classList.add("scrollable");
-        allActions.id = "all-actions";
-        allPassives.id = "all-passives";
         
+        // section header
+        let sectionHeader = document.createElement("h3");
+        sectionHeader.classList.add("section-header");
+        sectionHeader.innerHTML = source;
+        actions.length ? allActions.appendChild(sectionHeader) : null;
+        passives.length ? allPassives.appendChild(sectionHeader) : null;
+
         actions.forEach((action) => allActions.appendChild(action));
         passives.forEach((passive) => allPassives.appendChild(passive));
+
         document.querySelector("#actions").appendChild(allActions);
         document.querySelector("#passives").appendChild(allPassives);
     });
     
+}
+
+const implementLevels = () =>
+{
+    console.log("implementing levels");
+
+    data.levels.forEach((feature) =>
+    {
+        data.features.push(feature);
+    });
 }
 
 const implementRace = () =>
